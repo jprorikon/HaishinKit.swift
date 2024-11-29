@@ -18,14 +18,9 @@ public struct MoQTStreamHeaderSubgroup: MoQTDataStream {
             return payload.data
         }
     }
+}
 
-    public init(trackAlias: Int, groupId: Int, subgroupId: Int, publisherPriority: Int) {
-        self.trackAlias = trackAlias
-        self.groupId = groupId
-        self.subgroupId = subgroupId
-        self.publisherPriority = publisherPriority
-    }
-
+extension MoQTStreamHeaderSubgroup {
     init(_ payload: inout MoQTPayload) throws {
         trackAlias = try payload.getInt()
         groupId = try payload.getInt()

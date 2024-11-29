@@ -4,6 +4,6 @@ public enum MoQTDataStreamType: Int, Sendable {
     case fetchHeader = 0x5
 }
 
-protocol MoQTDataStream {
+public protocol MoQTDataStream {
     var type: MoQTDataStreamType { get }
 }
